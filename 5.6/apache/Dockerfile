@@ -113,7 +113,7 @@ RUN set -xe \
 		--enable-mbstring \
 		--with-curl \
 		--with-libedit \
-		--with-openssl --enable-ftp --enable-zip \
+		--with-openssl --enable-opcache --enable-ftp --enable-zip \
 		--with-zlib \
 	&& make -j"$(nproc)" \
 	&& make install \

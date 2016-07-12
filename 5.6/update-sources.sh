@@ -13,4 +13,4 @@ cp -R ./apache  $THIS_DIR
 cd $THIS_DIR
 
 echo "Adding ftp and zip modules..."
-sed -i "s/--with-openssl/--with-openssl --enable-ftp --enable-zip/g" ./apache/Dockerfile
+sed -i "s/--with-openssl/--with-openssl --enable-opcache --enable-ftp --enable-zip/g" ./apache/Dockerfile
