@@ -18,7 +18,7 @@ OPCACHE_INI_FILE="$INI_DIR/opcache-custom.ini"
 
 rm -f $OPCACHE_INI_FILE
 
-if [ "$SWPHP_OPCACHE_ENABLE" == "1" ]; then
+if [ "$PHP_OPCACHE_ENABLE" == "1" ]; then
   echo "zend_extension=opcache.so" >> $OPCACHE_INI_FILE
   echo "opcache.enable=1" >> $OPCACHE_INI_FILE
   echo "opcache.memory_consumption=$PHP_OPCACHE_MEMORY_CONSUMPTION" >> $OPCACHE_INI_FILE
