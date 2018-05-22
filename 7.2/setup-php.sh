@@ -29,12 +29,3 @@ if [ "$PHP_OPCACHE_ENABLE" == "1" ]; then
   echo "opcache.revalidate_freq=$PHP_OPCACHE_REVALIDATE_FREQ" >> $OPCACHE_INI_FILE
   echo "opcache.fast_shutdown=$PHP_OPCACHE_FAST_SHUTDOWN" >> $OPCACHE_INI_FILE
 fi
-
-
-APC_INI_FILE="$INI_DIR/apcu.ini"
-
-rm -f $APC_INI_FILE
-
-if [ $PHP_APCU_ENABLE == '1' ]; then
-  echo 'extension=apcu.so' > $APC_INI_FILE
-fi
