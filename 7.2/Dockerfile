@@ -8,11 +8,7 @@ RUN apt-get update && apt-get install -y \
         libicu-dev \
         zlib1g-dev
 
-# install apcu and enable it
-#RUN pecl install apcu \
-#    && pecl install apcu_bc-1.0.3 \
-#    && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
-#    && docker-php-ext-enable apc --ini-name 20-docker-php-ext-apc.ini
+RUN pecl install apcu
 
 # install pdo
 RUN /usr/local/bin/docker-php-ext-install pdo pdo_mysql
@@ -52,4 +48,7 @@ ENV PHP_OPCACHE_REVALIDATE_FREQ 5
 ENV PHP_OPCACHE_FAST_SHUTDOWN 1
 ENV PHP_SESSION_COOKIE_SECURE On
 
-#RUN sed -i "3i/setup-php.sh" /usr/local/bin/apache2-foreground
+# other variables
+ENV PHP_APCU_ENABLE 1
+
+RUN sed -i "3i/setup-php.sh" /usr/local/bin/apache2-foreground
